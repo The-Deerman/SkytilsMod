@@ -84,7 +84,7 @@ open class Slayer<T : LivingEntity>(
             for (nearby in nearbyArmorStands) {
                 when {
                     nearby.displayName?.formattedText?.startsWith("§8[§7Lv") == true -> continue
-                    nameStart.any { nearby.displayName?.formattedText?.startsWith(it) == true } -> {
+                    nameStart.any { nearby.displayName?.formattedText?.contains(it) == true } -> {
                         printDevMessage(
                             { "expected tier $currentTier, hp $expectedHealth - spawned hp ${entity.baseMaxHealth.toInt()}" },
                             "slayer"
