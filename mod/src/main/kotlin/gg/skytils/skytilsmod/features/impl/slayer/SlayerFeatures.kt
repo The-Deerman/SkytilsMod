@@ -97,7 +97,7 @@ object SlayerFeatures : EventSubscriber, CoroutineScope {
     // but that requires a more extensive testing of all skyblock timers,
     // something I am not quite particularly fond of doing
     internal val timerRegex =
-        Regex("(?:§[8bef]§l(ASHEN|CRYSTAL|AURIC|SPIRIT)§[8bef] ♨\\d |§4§lIMMUNE )?§c\\d+:\\d+(?:§r)?")
+        Regex("(?:§r)?(?:§[8bef]§l(ASHEN|CRYSTAL|AURIC|SPIRIT)§[8bef] ♨\\d |§4§lIMMUNE )?§c\\d+:\\d+(?:§r)?")
     internal val totemRegex = Regex("§6§l(?<time>\\d+)s §c§l(?<hits>\\d+) hits")
     var slayer: Slayer<*>? = null
         set(value) {
