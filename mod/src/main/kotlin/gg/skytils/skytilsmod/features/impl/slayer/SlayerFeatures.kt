@@ -117,8 +117,8 @@ object SlayerFeatures : EventSubscriber, CoroutineScope {
         slayer = try {
             when (entity) {
                 is ZombieEntity -> RevenantSlayer(entity)
-                is SpiderEntity -> Slayer(entity, "Tarantula Broodfather", "§5☠ §4Tarantula Broodfather")
-                is WolfEntity -> Slayer(entity, "Sven Packmaster", "§c☠ §fSven Packmaster")
+                is SpiderEntity -> Slayer(entity, "Tarantula Broodfather", "§4Tarantula Broodfather")
+                is WolfEntity -> Slayer(entity, "Sven Packmaster", "§fSven Packmaster")
                 is EndermanEntity -> SeraphSlayer(entity)
                 is BlazeEntity -> DemonlordSlayer(entity)
                 is OtherClientPlayerEntity -> {
