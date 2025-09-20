@@ -82,14 +82,14 @@ object SlayerFeatures : EventSubscriber, CoroutineScope {
     override val coroutineContext = Executors.newSingleThreadExecutor().asCoroutineDispatcher() + SupervisorJob()
 
     private val ZOMBIE_MINIBOSSES = arrayOf(
-        "§cRevenant Sycophant",
-        "§cRevenant Champion",
-        "§4Deformed Revenant",
-        "§cAtoned Champion",
-        "§4Atoned Revenant"
+        "Revenant Sycophant",
+        "Revenant Champion",
+        "Deformed Revenant",
+        "Atoned Champion",
+        "Atoned Revenant"
     )
-    private val SPIDER_MINIBOSSES = arrayOf("§cTarantula Vermin", "§cTarantula Beast", "§4Mutant Tarantula")
-    private val WOLF_MINIBOSSES = arrayOf("§cPack Enforcer", "§cSven Follower", "§4Sven Alpha")
+    private val SPIDER_MINIBOSSES = arrayOf("Tarantula Vermin", "Tarantula Beast", "Mutant Tarantula")
+    private val WOLF_MINIBOSSES = arrayOf("Pack Enforcer", "Sven Follower", "Sven Alpha")
     private val ENDERMAN_MINIBOSSES = arrayOf("Voidling Devotee", "Voidling Radical", "Voidcrazed Maniac")
     private val BLAZE_MINIBOSSES = arrayOf("Flare Demon", "Kindleheart Demon", "Burningsoul Demon")
 
@@ -256,7 +256,7 @@ object SlayerFeatures : EventSubscriber, CoroutineScope {
             val entity = event.entity as ArmorStandEntity
             if (!entity.hasCustomName()) return
             val name = entity.displayName?.string ?: return
-            if (Skytils.config.slayerBossHitbox && name.endsWith("§c❤") && !name.endsWith("§e0§c❤") && !mc.entityRenderDispatcher.shouldRenderHitboxes()) {
+            if (Skytils.config.slayerBossHitbox && name.endsWith("❤") && !name.endsWith(" 0❤") && !mc.entityRenderDispatcher.shouldRenderHitboxes()) {
                 val (x, y, z) = RenderUtil.fixRenderPos(event.x, event.y, event.z)
                 if (ZOMBIE_MINIBOSSES.any { name.contains(it) } || BLAZE_MINIBOSSES.any { name.contains(it) }) {
                     drawOutlinedBoundingBox(
