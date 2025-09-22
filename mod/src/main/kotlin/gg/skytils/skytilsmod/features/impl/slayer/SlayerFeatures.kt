@@ -88,7 +88,13 @@ object SlayerFeatures : EventSubscriber, CoroutineScope {
         "Atoned Champion",
         "Atoned Revenant"
     )
-    private val SPIDER_MINIBOSSES = arrayOf("Tarantula Vermin", "Tarantula Beast", "Mutant Tarantula")
+    private val SPIDER_MINIBOSSES = arrayOf(
+        "Tarantula Vermin",
+        "Tarantula Beast",
+        "Mutant Tarantula",
+        "Primordial Jockey",
+        "Primordial Viscount"
+    )
     private val WOLF_MINIBOSSES = arrayOf("Pack Enforcer", "Sven Follower", "Sven Alpha")
     private val ENDERMAN_MINIBOSSES = arrayOf("Voidling Devotee", "Voidling Radical", "Voidcrazed Maniac")
     private val BLAZE_MINIBOSSES = arrayOf("Flare Demon", "Kindleheart Demon", "Burningsoul Demon")
