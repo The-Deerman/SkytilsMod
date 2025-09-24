@@ -5,7 +5,7 @@ on:
     branches: [ deerman-slayer-fixes ]
   push:
     branches: [ deerman-slayer-fixes ]
-  workflow_dispatch:
+  dispatch:
     branches: [ deerman-slayer-fixes ]
 
 jobs:
