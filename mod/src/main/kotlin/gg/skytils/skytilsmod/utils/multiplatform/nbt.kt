@@ -25,4 +25,8 @@ import kotlin.jvm.optionals.getOrNull
 val ItemStack.nbt
     get() =
         if (isEmpty) null
+        //#if MC>=12110
+        //$$ else components.get(net.minecraft.component.DataComponentTypes.CUSTOM_DATA)?.copyNbt()
+        //#else
         else MinecraftClient.getInstance().player?.registryManager?.let(::toNbt)?.asCompound()?.getOrNull()
+        //#endif
